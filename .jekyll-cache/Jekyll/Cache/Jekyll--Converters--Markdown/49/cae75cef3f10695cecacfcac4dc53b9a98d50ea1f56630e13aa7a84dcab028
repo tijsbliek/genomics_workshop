@@ -1,0 +1,603 @@
+I"¼v
+<h1 id="general">Introduction to Open Data Science with R<br /><br /></h1>
+
+<h2 id="general">General Information</h2>
+
+<p>
+<br />
+This lesson will introduce you to open data science so you can work with data in an open, reproducible, and collaborative way. Open data science means that methods, data, and code are available so that others can access, reuse, and build from it without much fuss. Here you will learn a workflow with R, RStudio, Git, and GitHub.
+
+This is going to be fun, because learning these open data science tools and practices is empowering! This training book is written (and always improving) so you can use it as self-paced learning, or it can be used to teach an in-person workshop where the instructor live-codes. Either way, you should do everything hands-on on your own computer as you learn.
+<br />
+<br />
+</p>
+
+<h3 id="general">Who are we</h3>
+
+<p>
+ Amsterdam Science Park Study Group is dedicated to building a community of computational biologists and bioinformaticians. This Study Group promotes skill sharing and collaboration by (1) organizing one-hour interactive workshops, (2) regularly organise co-working sessions for peer-to-peer assistance, (3) act as local hub to set-up Software and Data Carpentry workshops and, last but not least (4) bring researchers together at social events like Hacky Hours hackatons. All are welcome to this study group, regardless of scientific research area, affiliation or training level.
+</p>
+<p align="center">
+  <em>
+    For more information on what we teach and why,
+    see our website: 
+    "<a href="https://www.scienceparkstudygroup.info">scienceparkstudygroup</a>".
+  </em>
+</p>
+<p>
+<br />
+<br />
+<br />
+</p>
+
+<p id="who">
+  <strong>Who:</strong>
+  The course is aimed at graduate students and other researchers.
+  <strong>
+    You don't need to have any previous knowledge of the tools
+    that will be presented at the workshop.
+  </strong>
+</p>
+
+<p id="where">
+  <strong>Where:</strong>
+  Science park 904, Amsterdam.
+  Get directions with
+  <a href="//www.openstreetmap.org/?mlat=52.354430&amp;mlon=4.956300&amp;zoom=16">OpenStreetMap</a>
+  or
+  <a href="//maps.google.com/maps?q=52.354430,4.956300">Google Maps</a>.
+</p>
+
+<p id="rooms">
+  <strong>Rooms:</strong> Unfortunately we were signed to multiple rooms:
+</p>
+<ul>
+  <li>wed. Nov 20 9:00 to 13:00 room A1.10</li>
+  <li>Thu. Nov 21 9:00 to 13:00 room D1.113</li>
+  <li>Thu. Nov 20 13:00 to 15:00 room B0.204</li>
+  <li>Thu. Nov 20 15:00 to 17:00 room B0.207</li>
+  <li>Fri. Nov 22 9:00 to 13:00 room B0.203</li>
+  <li>Fri. Nov 22 13:00 to 17:00 room B0.209</li>
+<br />
+</ul>
+<p id="includes">
+  <strong>Included:</strong> Coffee and tea will be included, Lunch is <u>not</u> included.
+</p>
+
+<p id="when">
+  <strong>When:</strong>
+  Nov 20-22 2019.
+  <a href="//calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Data Carpentry Workshop&amp;dates=20191001/20191002&amp;trp=false&amp;sprop&amp;sprop=name:&amp;sf=true&amp;output=xml&amp;location=Science park 904, Amsterdam&amp;details=Data Carpentry Workshop at UvA Amsterdam">Add to your Google Calendar.</a>
+
+</p>
+
+<p id="requirements">
+  <strong>Requirements:</strong> Participants must bring a laptop with a
+  Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges on. They should have a few specific software packages installed (listed <a href="#setup">below</a>).
+</p>
+
+<p id="code-of-conduct">
+<strong>Code of Conduct:</strong>  Everyone who participates in Carpentries activities is required to conform to the <a href="https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html">Code of Conduct</a>. This document also outlines how to report an incident if needed.
+</p>
+
+<p id="accessibility">
+  <strong>Accessibility:</strong> We are committed to making this workshop
+  accessible to everybody.
+  The workshop organizers have checked that:
+</p>
+<ul>
+  <li>The room is wheelchair / scooter accessible.</li>
+  <li>Accessible restrooms are available.</li>
+</ul>
+<p>
+  Materials will be provided in advance of the workshop and
+  large-print handouts are available if needed by notifying the
+  organizers in advance.  If we can help making learning easier for
+  you (e.g. sign-language interpreters, lactation facilities) please
+  get in touch (using contact details below) and we will
+  attempt to provide them.
+</p>
+
+<p id="contact">
+  <strong>Contact</strong>:
+  Please email
+  
+  
+  
+  
+  
+  <a href="mailto:bliek@uva.nl">bliek@uva.nl</a>
+  
+  
+  for more information.
+</p>
+
+<hr />
+
+<h2 id="surveys">Surveys</h2>
+<p>Please be sure to complete these surveys before and after the workshop.</p>
+
+<p><a href="https://www.surveymonkey.com/r/dcpreworkshopassessment?workshop_id=">Pre-workshop Survey</a></p>
+<p><a href="https://www.surveymonkey.com/r/dcpostworkshopassessment?workshop_id=">Post-workshop Survey</a></p>
+
+<hr />
+
+<h2 id="schedule">Schedule</h2>
+
+<!--
+<div class="row">
+  <div class="col-md-6">
+    <h3>Day 1</h3>
+    <table class="table table-striped">
+      <tr>
+	<td>Before starting</td>
+	<td><a href="https://www.surveymonkey.com/r/dcpreworkshopassessment?workshop_id=" target="_blank">Pre-workshop survey</a></td>
+	<td></td>
+      </tr>
+      <tr><td>08:45</td> <td>Welcome cofee/tea</td><td></td></tr>	    
+      <tr><td>09:00</td> <td>Intro to Carpentry</td><td>MK</td></tr>	    
+      <tr><td>09:15</td> <td> <a href="https://nioo-knaw.github.io/cloud-genomics/">Introduction to Cloud Computing</a></td><td>MH</td></tr>
+      <tr><td>10:30</td> <td>cofee/tea break</td><td></td></tr>	    	          
+      <tr><td>10:45</td> <td> <a href="https://nioo-knaw.github.io/cloud-genomics/">Introduction to Cloud Computing continued</a></td><td>MH</td></tr>
+      <tr><td>11:45</td><td><a href="https://datacarpentry.org/shell-genomics/">Introducing the shell</a></td><td>LF</td></tr>
+      <tr><td>12:15</td> <td>Organized lunch in Grand cafe downstairs</td><td></td></tr>
+      <tr><td>13:00</td><td><a href="https://datacarpentry.org/shell-genomics/">Introduction to the command line</a></td><td>LF</td></tr>
+      <tr><td>14:45</td> <td>cofee/tea break</td><td></td></tr>
+      <tr><td>15:00</td><td><a href="https://datacarpentry.org/shell-genomics/">Introduction to the command line part 2</a></td><td>LF</td></tr>	    
+      <tr><td>16:30</td> <td>Closing</td><td></td></tr>
+    </table>
+  </div>
+  <div class="col-md-6">
+    <h3>Day 2</h3>
+    <table class="table table-striped">
+      <tr><td>08:45</td> <td>Welcome cofee/tea</td><td></td></tr>	    	    
+      <tr> <td>09:00</td> <td><a href="https://shiltemann.github.io/wrangling-genomics/">Data Wrangling and Processing Part 1</a></td><td>SH</td></tr>
+      <tr><td>10:30</td> <td>cofee/tea break</td><td></td></tr>	    	    
+      <tr> <td>10:45</td> <td><a href="https://shiltemann.github.io/wrangling-genomics/">Data Wrangling and Processing Part 2</a></td><td>SH</td></tr>
+      <tr><td>12:15</td> <td>Organized lunch in Grand cafe downstairs</td><td></td></tr>
+      <tr> <td>13:00</td><td><a href="https://shiltemann.github.io/wrangling-genomics/">Data Wrangling and Processing Part 3</a></td><td>MG</td></tr>
+      <tr><td>14:45</td> <td>cofee/tea break</td><td></td></tr>
+      <tr> <td>15:00</td><td><a href="https://shiltemann.github.io/wrangling-genomics/">Data Wrangling and Processing Part 4</a></td><td>MG</td></tr>	    
+      <tr><td>16:30</td> <td>drinks & bites</td><td></td></tr>	          	    
+      <tr>
+	<td></td>
+	<td><a href="https://www.surveymonkey.com/r/dcpostworkshopassessment?workshop_id=" target="_blank">Post-workshop survey</a></td>
+      </tr>
+    </table>
+  </div>
+</div>
+-->
+<div class="row">
+  <div class="col-md-6">
+    <h3>Day 1</h3>
+    <table class="table table-striped">
+      <tr>
+        <td>Before starting</td>
+        <td><a href="https://www.surveymonkey.com/r/dcpreworkshopassessment?workshop_id=" target="_blank">Pre-workshop survey</a></td>
+        <td></td>
+      </tr>
+      <tr><td>08:45</td> <td>Welcome cofee/tea</td><td></td></tr>
+      <tr><td>09:00</td> <td>Intro to Carpentry</td><td>MK</td></tr>
+      <tr><td>09:15</td> <td>Introduction to Cloud Computing</td><td>MH</td></tr>
+      <tr><td>10:30</td> <td>cofee/tea break</td><td></td></tr>
+      <tr><td>10:45</td> <td>Introduction to Cloud Computing continued</td><td>MH</td></tr>
+      <tr><td>11:45</td> <td>Introducing the shell</td><td>LF</td></tr>
+      <tr><td>12:15</td> <td>Organized lunch in Grand cafe downstairs</td><td></td></tr>
+      <tr><td>13:00</td> <td>Introduction to the command line</td><td>LF</td></tr>
+      <tr><td>14:45</td> <td>cofee/tea break</td><td></td></tr>
+      <tr><td>15:00</td> <td>Introduction to the command line part 2</td><td>LF</td></tr>
+      <tr><td>16:30</td> <td>Closing</td><td></td></tr>
+    </table>
+  </div>
+  <div class="col-md-6">
+    <h3>Day 2</h3>
+    <table class="table table-striped">
+      <tr><td>08:45</td> <td>Welcome cofee/tea</td><td></td></tr>
+      <tr><td>09:00</td> <td>Data Wrangling and Processing Part 1</td><td>SH</td></tr>
+      <tr><td>10:30</td> <td>cofee/tea break</td><td></td></tr>
+      <tr><td>10:45</td> <td>Data Wrangling and Processing Part 2</td><td>SH</td></tr>
+      <tr><td>12:15</td> <td>Organized lunch in Grand cafe downstairs</td><td></td></tr>
+      <tr><td>13:00</td> <td>Data Wrangling and Processing Part 3</td><td>MG</td></tr>
+      <tr><td>14:45</td> <td>cofee/tea break</td><td></td></tr>
+      <tr><td>15:00</td> <td>Data Wrangling and Processing Part 4</td><td>MG</td></tr>
+      <tr><td>16:30</td> <td>drinks &amp; bites</td><td></td></tr>
+      <tr>
+        <td></td>
+        <td><a href="https://www.surveymonkey.com/r/dcpostworkshopassessment?workshop_id=" target="_blank">Post-workshop survey</a></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<hr />
+
+<h2 id="syllabus">Syllabus</h2>
+
+<div class="row">
+  <div class="col-md-6">
+    <h3 id="syllabus-ecology-spreadsheet">Data Organisation in Spreadsheets</h3>
+    <ul>
+      <li><a href="http://www.datacarpentry.org/spreadsheet-ecology-lesson/00-intro/">Introduction</a></li>
+      <li><a href="http://www.datacarpentry.org/spreadsheet-ecology-lesson/01-format-data/">Formatting Data</a></li>
+      <li><a href="http://www.datacarpentry.org/spreadsheet-ecology-lesson/02-common-mistakes/">Common Formatting Problems</a></li>
+      <li><a href="http://www.datacarpentry.org/spreadsheet-ecology-lesson/03-dates-as-data/">Dates as Data</a></li>
+      <li><a href="http://www.datacarpentry.org/spreadsheet-ecology-lesson/04-quality-control/">Quality Control</a></li>
+      <li><a href="http://www.datacarpentry.org/spreadsheet-ecology-lesson/05-exporting-data/">Exporting Data</a></li>
+    </ul>
+  </div>
+<!--
+  <div class="col-md-6">
+    <h3 id="syllabus-ecology-openrefine">Data Cleaning with OpenRefine</h3>
+    <ul>
+      <li><a href="http://www.datacarpentry.org/OpenRefine-ecology-lesson/00-getting-started/">Introduction</a></li>
+      <li><a href="http://www.datacarpentry.org/OpenRefine-ecology-lesson/01-working-with-openrefine/">Working with OpenRefine</a></li>
+      <li><a href="http://www.datacarpentry.org/OpenRefine-ecology-lesson/02-filter-exclude-sort/">Filtering and Sorting</a></li>
+      <li><a href="http://www.datacarpentry.org/OpenRefine-ecology-lesson/03-numbers/">Examining Numeric Data</a></li>
+      <li><a href="http://www.datacarpentry.org/OpenRefine-ecology-lesson/04-scripts/">Generating Scripts</a></li>
+      <li><a href="http://www.datacarpentry.org/OpenRefine-ecology-lesson/05-save-export/">Exporting Data</a></li>
+      <li><a href="http://www.datacarpentry.org/OpenRefine-ecology-lesson/06-resources/">Other Resources</a></li>    </ul>
+  </div>
+-->
+  <div class="col-md-6">
+    <h3 id="syllabus-ecology-r">Introduction to R</h3>
+    <ul>
+      <li><a href="http://www.datacarpentry.org/R-ecology-lesson/00-before-we-start.html">Overview of R and RStudio</a></li>
+      <li><a href="http://www.datacarpentry.org/R-ecology-lesson/01-intro-to-r.html">Introduction to R</a></li>
+      <li><a href="http://www.datacarpentry.org/R-ecology-lesson/02-starting-with-data.html">Starting with Data</a></li>
+      <li><a href="http://www.datacarpentry.org/R-ecology-lesson/03-dplyr.html">Manipulating Data Frames with <code>dplyr</code></a></li>
+      <li><a href="http://www.datacarpentry.org/R-ecology-lesson/04-visualization-ggplot2.html">Data Visualisation with <code>ggplot2</code></a></li>
+      <li><a href="http://www.datacarpentry.org/R-ecology-lesson/05-r-and-databases.html">Interacting with Databases with <code>dbplyr</code></a></li>
+    </ul>
+  </div>
+<!--
+  <div class="col-md-6">
+    <h3 id="syllabus-ecology-python">Introduction to Python</h3>
+    <ul>
+      <li><a href="https://datacarpentry.org/python-ecology-lesson/00-before-we-start/index.html">Overview of Python</a></li>
+      <li><a href="https://datacarpentry.org/python-ecology-lesson/02-starting-with-data/index.html">Starting with Data</a></li>
+      <li><a href="https://datacarpentry.org/python-ecology-lesson/03-index-slice-subset/index.html">Manipulating Data Frames</a></li>
+      <li><a href="https://datacarpentry.org/python-ecology-lesson/04-data-types-and-format/index.html">Data Types and Formats</a></li>
+      <li><a href="https://datacarpentry.org/python-ecology-lesson/05-merging-data/index.html">Combining DataFrames</a></li>
+      <li><a href="https://datacarpentry.org/python-ecology-lesson/06-loops-and-functions/index.html">Data Workflows and Automation</a></li>
+      <li><a href="https://datacarpentry.org/python-ecology-lesson/07-visualization-ggplot-python/index.html">Data Visualisation with <code>plotnine</code></a></li>
+      <li><a href="https://datacarpentry.org/python-ecology-lesson/08-putting-it-all-together/index.html">Data Visualisation with <code>matplotlib</code></a></li>
+      <li><a href="https://datacarpentry.org/python-ecology-lesson/09-working-with-sql/index.html">Interacting with Databases with <code>pandas</code></a></li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <h3 id="syllabus-ecology-sql">Data Management with SQL</h3>
+    <ul>
+      <li><a href="https://datacarpentry.org/sql-ecology-lesson/00-sql-introduction/index.html">Introduction to SQL</a></li>
+      <li><a href="https://datacarpentry.org/sql-ecology-lesson/01-sql-basic-queries/index.html">Basic Queries</a></li>
+      <li><a href="https://datacarpentry.org/sql-ecology-lesson/02-sql-aggregation/index.html">SQL Aggregation and Aliases</a></li>
+      <li><a href="https://datacarpentry.org/sql-ecology-lesson/03-sql-joins/index.html">Joins</a></li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <h3 id="syllabus-genomics-project">Project Organization and Management</h3>
+    <ul>
+      <li><a href="https://datacarpentry.org/organization-genomics/01-tidiness/index.html">Data Tidiness</a></li>
+      <li><a href="https://datacarpentry.org/organization-genomics/02-project-planning/index.html">Planning for NGS Projects</a></li>
+      <li><a href="https://datacarpentry.org/organization-genomics/03-ncbi-sra/index.html">Examining Data on the NCBI SRA Database</a></li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <h3 id="syllabus-genomics-unix">Introduction to the Command Line</h3>
+    <ul>
+      <li><a href="https://datacarpentry.org/shell-genomics/01-introduction/index.html">Introducing the Shell</a></li>
+      <li><a href="https://datacarpentry.org/shell-genomics/02-the-filesystem/index.html">Navigating Files and Directories</a></li>
+      <li><a href="https://datacarpentry.org/shell-genomics/03-working-with-files/index.html">Working with Files and Directories</a></li>
+      <li><a href="https://datacarpentry.org/shell-genomics/04-redirection/index.html">Redirection</a></li>
+      <li><a href="https://datacarpentry.org/shell-genomics/05-writing-scripts/index.html">Writing Scripts</a></li>
+      <li><a href="https://datacarpentry.org/shell-genomics/06-organization/index.html">Project Organization</a></li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <h3 id="syllabus-genomics-wrangling">Data Wrangling and Processing for Genomics</h3>
+    <ul>
+      <li><a href="https://datacarpentry.org/wrangling-genomics/00-quality-control/index.html">Assessing Read Quality</a></li>
+      <li><a href="https://datacarpentry.org/wrangling-genomics/01-trimming/index.html">Trimming and Filtering</a></li>
+      <li><a href="https://datacarpentry.org/wrangling-genomics/02-variant_calling/index.html">Variant Calling Workflow</a></li>
+      <li><a href="https://datacarpentry.org/wrangling-genomics/03-automation/index.html">Automating a Variant Calling Workflow</a></li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <h3 id="syllabus-genomics-cloud">Introduction to Cloud Computing for Genomics</h3>
+    <ul>
+      <li><a href="https://datacarpentry.org/cloud-genomics/01-why-cloud-computing/index.html">Why of Cloud Computing</a></li>
+      <li><a href="https://datacarpentry.org/cloud-genomics/02-logging-onto-cloud/index.html">Logging onto Cloud</a></li>
+      <li><a href="https://datacarpentry.org/cloud-genomics/03-verifying-instance/index.html">Fine Tuning your Cloud Setup</a></li>
+      <li><a href="https://datacarpentry.org/cloud-genomics/04-data-roundtripping/index.html">Data Roundtripping</a></li>
+      <li><a href="https://datacarpentry.org/cloud-genomics/05-which-cloud/index.html">Which Cloud for my Data?</a></li>
+    </ul>
+  </div>
+-->
+
+<!--
+  <div class="col-md-6">
+    <h3 id="syllabus-socialsci-spreadsheets">Data Organization in Spreadsheets</h3>
+    <ul>
+      <li><a href="https://datacarpentry.org/spreadsheets-socialsci/00-intro/index.html">Introduction</a></li>
+      <li><a href="https://datacarpentry.org/spreadsheets-socialsci/01-format-data/index.html">Formatting Tables in Spreadsheets</a></li>
+      <li><a href="https://datacarpentry.org/spreadsheets-socialsci/02-common-mistakes/index.html">Formatting Problems</a></li>
+      <li><a href="https://datacarpentry.org/spreadsheets-socialsci/03-dates-as-data/index.html">Dates as Data</a></li>
+      <li><a href="https://datacarpentry.org/spreadsheets-socialsci/04-quality-assurance/index.html">Quality Assurance</a></li>
+      <li><a href="https://datacarpentry.org/spreadsheets-socialsci/05-exporting-data/index.html">Exporting Data</a></li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <h3 id="syllabus-socialsci-openrefine">Data Cleaning with OpenRefine</h3>
+    <ul>
+      <li><a href="https://datacarpentry.org/openrefine-socialsci/01-introduction/index.html">Introduction</a></li>
+      <li><a href="https://datacarpentry.org/openrefine-socialsci/02-working-with-openrefine/index.html">Working with OpenRefine</a></li>
+      <li><a href="https://datacarpentry.org/openrefine-socialsci/03-filter-sort/index.html">Filtering and Sorting</a></li>
+      <li><a href="https://datacarpentry.org/openrefine-socialsci/04-numbers/index.html">Examining Numeric Data</a></li>
+      <li><a href="https://datacarpentry.org/openrefine-socialsci/05-scripts/index.html">Generating Scripts</a></li>
+      <li><a href="https://datacarpentry.org/openrefine-socialsci/06-saving/index.html">Exporting Data</a></li>
+      <li><a href="https://datacarpentry.org/openrefine-socialsci/07-resources/index.html">Other Resources</a></li>    
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <h3 id="syllabus-socialsci-r">Introduction to R</h3>
+    <ul>
+      <li><a href="https://datacarpentry.org/r-socialsci/00-intro/index.html">Overview of R and RStudio</a></li>
+      <li><a href="https://datacarpentry.org/r-socialsci/01-intro-to-r/index.html">Introduction to R</a></li>
+      <li><a href="https://datacarpentry.org/r-socialsci/02-starting-with-data/index.html">Starting with Data</a></li>
+      <li><a href="https://datacarpentry.org/r-socialsci/03-dplyr-tidyr/index.html">Manipulating Data Frames with <code>dplyr</code></a></li>
+      <li><a href="https://datacarpentry.org/r-socialsci/04-ggplot2/index.html">Data Visualisation with <code>ggplot2</code></a></li>
+    </ul>
+  </div>
+-->
+<div class="row">
+  <div class="col-md-6">
+    <h3 id="syllabus-git">Version Control with Git</h3>
+    <ul>
+      <li>Creating a repository</li>
+      <li>Configuring Git</li>
+      <li>Recording Changes to Files: <code>add</code>, <code>commit</code>, ...</li>
+      <li>Viewing State Changes with <code>status</code></li>
+      <li>Working on the Web: <code>clone</code>, <code>pull</code>, <code>push</code>, ...</li>
+      <li>Where to Host Work, and Why</li>
+      <li><a href="https://librarycarpentry.github.io/lc-git/reference">Reference...</a></li>
+    </ul>
+  </div>
+<!--
+  <div class="col-md-6">
+    <div class="col-md-6">
+      <h3 id="syllabus-openrefine">OpenRefine</h3>
+      <ul>
+        <li>Introduction to OpenRefine</li>
+        <li>Importing Data</li>
+        <li>Basic Functions</li>
+        <li>Advanced Functions</li>
+        <li><a href="https://librarycarpentry.github.io/lc-open-refine/reference">Reference...</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+-->
+</div>
+
+
+
+<hr />
+
+
+
+<h2 id="setup">Setup</h2>
+
+<p>
+  To participate in a this workshop,
+  you will need access to the software described below.
+  In addition, you will need an up-to-date web browser.
+</p>
+<p>
+  We maintain a list of common issues that occur during installation as a reference for instructors
+  that may be useful on the
+  <a href="https://github.com/swcarpentry/workshop-template/wiki/Configuration-Problems-and-Solutions">Configuration Problems and Solutions wiki page</a>.
+</p>
+
+<div id="shell"> 
+
+
+<div id="git"> 
+  <h3>Git</h3>
+  <p>
+    Git is a version control system that lets you track who made changes
+    to what when and has options for easily updating a shared or public
+    version of your code
+    on <a href="https://github.com/">github.com</a>. You will need a
+    <a href="https://help.github.com/articles/supported-browsers/">supported
+    web browser</a>.
+  </p>
+  <p>
+    You will need an account at <a href="https://github.com/">github.com</a>
+    for parts of the Git lesson. Basic GitHub accounts are free. We encourage
+    you to create a GitHub account if you don't have one already.
+    Please consider what personal information you'd like to reveal. For
+    example, you may want to review these
+    <a href="https://help.github.com/articles/keeping-your-email-address-private/">instructions
+      for keeping your email address private</a> provided at GitHub.
+  </p>
+
+  <div>
+    <ul class="nav nav-tabs nav-justified" role="tablist">
+      <li role="presentation" class="active"><a data-os="windows" href="#git-windows" aria-controls="Windows" role="tab" data-toggle="tab">Windows</a></li>
+      <li role="presentation"><a data-os="macos" href="#git-macos" aria-controls="MacOS" role="tab" data-toggle="tab">MacOS</a></li>
+      <li role="presentation"><a data-os="linux" href="#git-linux" aria-controls="Linux" role="tab" data-toggle="tab">Linux</a></li>
+    </ul>
+
+    <div class="tab-content">
+      <article role="tabpanel" class="tab-pane active" id="git-windows">
+        <p>
+          Git should be installed on your computer as part of your Bash
+          install (described above).
+        </p>
+      </article>
+      <article role="tabpanel" class="tab-pane active" id="git-macos">
+        <a href="https://www.youtube.com/watch?v=9LQhwETCdwY ">Video Tutorial</a>
+        <p>
+          <strong>For OS X 10.9 and higher</strong>, install Git for Mac
+          by downloading and running the most recent "mavericks" installer from
+          <a href="http://sourceforge.net/projects/git-osx-installer/files/">this list</a>.
+          Because this installer is not signed by the developer, you may have to
+          right click (control click) on the .pkg file, click Open, and click
+          Open on the pop up window. 
+          After installing Git, there will not be anything in your <code>/Applications</code> folder,
+          as Git is a command line program.
+          <strong>For older versions of OS X (10.5-10.8)</strong> use the
+          most recent available installer labelled "snow-leopard"
+          <a href="http://sourceforge.net/projects/git-osx-installer/files/">available here</a>.
+        </p>
+      </article>
+      <article role="tabpanel" class="tab-pane active" id="git-linux">
+        <p>
+          If Git is not already available on your machine you can try to
+          install it via your distro's package manager. For Debian/Ubuntu run
+          <code>sudo apt-get install git</code> and for Fedora run
+          <code>sudo dnf install git</code>.
+        </p>
+      </article>
+    </div>
+  </div>
+</div> 
+
+
+<div id="editor"> 
+  <h3>Text Editor</h3>
+
+  <p>
+    When you're writing code, it's nice to have a text editor that is
+    optimized for writing code, with features like automatic
+    color-coding of key words. The default text editor on macOS and
+    Linux is usually set to Vim, which is not famous for being
+    intuitive. If you accidentally find yourself stuck in it, hit
+    the <kbd>Esc</kbd> key, followed by <kbd>:</kbd>+<kbd>Q</kbd>+<kbd>!</kbd> 
+    (colon, lower-case 'q', exclamation mark), then hitting <kbd>Return</kbd> to 
+    return to the shell.
+  </p>
+
+  <div>
+    <ul class="nav nav-tabs nav-justified" role="tablist">
+      <li role="presentation" class="active"><a data-os="windows" href="#editor-windows" aria-controls="Windows" role="tab" data-toggle="tab">Windows</a></li>
+      <li role="presentation"><a data-os="macos" href="#editor-macos" aria-controls="MacOS" role="tab" data-toggle="tab">MacOS</a></li>
+      <li role="presentation"><a data-os="linux" href="#editor-linux" aria-controls="Linux" role="tab" data-toggle="tab">Linux</a></li>
+    </ul>
+
+    <div class="tab-content">
+      <article role="tabpanel" class="tab-pane active" id="editor-windows">
+        <p>
+          nano is a basic editor and the default that instructors use in the workshop.
+          It is installed along with Git.
+        </p>
+        <p>
+          Others editors that you can use are
+          <a href="https://notepad-plus-plus.org/">Notepad++</a> or
+          <a href="https://www.sublimetext.com/">Sublime Text</a>.
+          <strong>Be aware that you must
+            add its installation directory to your system path.</strong>
+          Please ask your instructor to help you do this.
+        </p>
+      </article>
+      <article role="tabpanel" class="tab-pane active" id="editor-macos">
+        <p>
+          nano is a basic editor and the default that instructors use in the workshop.
+          See the Git installation <a href="https://www.youtube.com/watch?v=9LQhwETCdwY ">video tutorial</a>
+          for an example on how to open nano.
+          It should be pre-installed.
+        </p>
+        <p>
+          Others editors that you can use are
+          <a href="https://www.barebones.com/products/bbedit/">BBEdit</a> or
+          <a href="https://www.sublimetext.com/">Sublime Text</a>.
+        </p>
+      </article>
+      <article role="tabpanel" class="tab-pane active" id="editor-linux">
+        <p>
+          nano is a basic editor and the default that instructors use in the workshop.
+          It should be pre-installed.
+        </p>
+        <p>
+          Others editors that you can use are
+          <a href="https://wiki.gnome.org/Apps/Gedit">Gedit</a>,
+          <a href="https://kate-editor.org/">Kate</a> or
+          <a href="https://www.sublimetext.com/">Sublime Text</a>.
+        </p>
+      </article>
+    </div>
+  </div>
+</div> 
+
+<div id="python"> 
+
+
+
+
+  
+</div> 
+
+<div id="r"> 
+  <h3>R</h3>
+
+  <p>
+    <a href="https://www.r-project.org">R</a> is a programming language
+    that is especially powerful for data exploration, visualization, and
+    statistical analysis. To interact with R, we use
+    <a href="https://www.rstudio.com/">RStudio</a>.
+  </p>
+
+  <div>
+    <ul class="nav nav-tabs nav-justified" role="tablist">
+      <li role="presentation" class="active"><a data-os="windows" href="#rstats-windows" aria-controls="Windows" role="tab" data-toggle="tab">Windows</a></li>
+      <li role="presentation"><a data-os="macos" href="#rstats-macos" aria-controls="MacOS" role="tab" data-toggle="tab">MacOS</a></li>
+      <li role="presentation"><a data-os="linux" href="#rstats-linux" aria-controls="Linux" role="tab" data-toggle="tab">Linux</a></li>
+    </ul>
+
+    <div class="tab-content">
+      <article role="tabpanel" class="tab-pane active" id="rstats-windows">
+        <a href="https://www.youtube.com/watch?v=q0PjTAylwoU">Video Tutorial</a>
+        <p>
+          Install R by downloading and running
+          <a href="https://cran.r-project.org/bin/windows/base/release.htm">this .exe file</a>
+          from <a href="https://cran.r-project.org/index.html">CRAN</a>.
+          Also, please install the
+          <a href="https://www.rstudio.com/products/rstudio/download/#download">RStudio IDE</a>.
+          Note that if you have separate user and admin accounts, you should run the 
+          installers as administrator (right-click on .exe file and select "Run as 
+          administrator" instead of double-clicking). Otherwise problems may occur later, 
+          for example when installing R packages.
+        </p>
+      </article>
+      <article role="tabpanel" class="tab-pane active" id="rstats-macos">
+        <a href="https://www.youtube.com/watch?v=5-ly3kyxwEg">Video Tutorial</a>
+        <p>
+          Install R by downloading and running
+          <a href="https://cran.r-project.org/bin/macosx/R-latest.pkg">this .pkg file</a>
+          from <a href="https://cran.r-project.org/index.html">CRAN</a>.
+          Also, please install the
+          <a href="https://www.rstudio.com/products/rstudio/download/#download">RStudio IDE</a>.
+        </p>
+      </article>
+      <article role="tabpanel" class="tab-pane active" id="rstats-linux">
+        <p>
+          You can download the binary files for your distribution
+          from <a href="https://cran.r-project.org/index.html">CRAN</a>. Or
+          you can use your package manager (e.g. for Debian/Ubuntu
+          run <code>sudo apt-get install r-base</code> and for Fedora run
+          <code>sudo dnf install R</code>).  Also, please install the
+          <a href="https://www.rstudio.com/products/rstudio/download/#download">RStudio IDE</a>.
+        </p>
+      </article>
+    </div>
+  </div>
+</div> 
+
+<div id="sql"> 
+
+
+<div id="openrefine"> 
+
+
+
+</div></div></div></div>
+:ET
